@@ -1,4 +1,4 @@
-footer {
+footer, header {
     margin: 5px;
 }
 
@@ -13,6 +13,8 @@ footer {
     border: 1px solid #D8D7DC;
 }
 
-#success {
-    display: none;
+#writeNotes {
+    border-bottom: 1px solid #D8D7DC;
+    padding: 10px;
+    margin-bottom: 20px;
 }
