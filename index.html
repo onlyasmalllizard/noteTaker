@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+
+        <!-- required meta tags -->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- adds bootstrap and my own css stylesheet -->
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+
+        <!-- adds scripts -->
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/5.4.0/bootbox.min.js"></script>
+        <script defer src="index.js" type="module" charset="utf-8"></script>
+        <script src="helpers.js" charset="utf-8"></script>
+    </head>
+    <body>
+
+        <header>
+            <h1 class="text-center">Hello, Notes</h1>
+        </header>
+
+        <main class="container p-5">
+
+            <div id="writeNotes">
+
+                <form id="noteTaker">
+                    <div class="form-group">
+                        <label for="title">Enter a title for your note:</label><br/>
+                        <input class="form-control" type="text" id="title" name="title" placeholder="Title" autofocus>
+                    </div>
+                    <div class="form-group">
+                        <label for="note">Enter your note:</label>
+                        <textarea class="form-control" id="note" rows="5" placeholder="I've been thinking about..."></textarea>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" class="form-control btn btn-primary" id="submit" name="submit" value="Submit">
+                    </div>
+                </form>
+            </div>
+        
+            <div id="readNotes">
+                <div id="noteArchive"></div>
+                <button class="btn btn-danger btn-block" id="clearLocalStorage">Clear All Notes</button>
+            </div>
+
+        </main>
+
+        <footer class="small text-center text-muted">Made by Lizard 2020</footer>
+
+    </body>
+</html>
