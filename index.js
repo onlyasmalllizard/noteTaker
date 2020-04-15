@@ -100,8 +100,10 @@ Array.from(editButtons).forEach(function(button) {
 let clearNotes = document.querySelector('#clearLocalStorage');
 
 clearNotes.addEventListener('click', function(event) {
-    if (bootbox.confirm("Are you sure? You can't undo this!")) {
-        localStorage.clear();
-        location.reload();
-    }
+    (bootbox.confirm("Are you sure? You can't undo this!"), function(result) {
+        if (!result) {
+            localStorage.clear();
+            location.reload();
+        }
+    })
 })
