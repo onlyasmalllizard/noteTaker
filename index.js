@@ -6,7 +6,7 @@ let archive = document.getElementById('noteArchive');
 form.addEventListener('submit', function(event) {
     if (checkTitleAvailable((document.getElementById('title').value)) === true) {
         let time = new Date(Date.now());
-        let date = time.toGMTString();
+        let date = time.toLocaleTimeString();
         let id = JSON.stringify(Date.now());
         let note = document.getElementById('note').value;
         let data = { "note": note, "date": date, "id": id, timeEdited: "" };
@@ -87,7 +87,7 @@ Array.from(editButtons).forEach(function(button) {
                     localStorage.setItem(title, JSON.stringify(originalData));
                 } else {
                     let timeNow = new Date(Date.now());
-                    let timeOfEdit = timeNow.toGMTString();
+                    let timeOfEdit = timeNow.toLocaleTimeString();
                     let newData = { "note": result, "date": originalData.date, "id": originalData.id, "timeEdited": `, Edited on: ${timeOfEdit}` };
                     localStorage.setItem(title, JSON.stringify(newData));
                     location.reload();
