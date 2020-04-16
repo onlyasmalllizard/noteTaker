@@ -88,7 +88,7 @@ Array.from(editButtons).forEach(function(button) {
                 } else {
                     let timeNow = new Date(Date.now());
                     let timeOfEdit = timeNow.toLocaleString();
-                    let newData = { "note": result, "date": originalData.date, "id": originalData.id, "timeEdited": `, Edited on: ${timeOfEdit}` };
+                    let newData = { "note": result, "date": originalData.date, "id": originalData.id, "timeEdited": `| Edited on: ${timeOfEdit}` };
                     localStorage.setItem(title, JSON.stringify(newData));
                     location.reload();
                 }
