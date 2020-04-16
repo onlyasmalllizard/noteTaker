@@ -9,7 +9,7 @@ form.addEventListener('submit', function(event) {
         let date = time.toLocaleString();
         let id = JSON.stringify(Date.now());
         let note = document.getElementById('note').value;
-        let data = { "note": note, "date": `Posted on: ${date}`  , "id": id, timeEdited: "" };
+        let data = { "note": note, "date": `Posted on: ${date}`, "id": id, timeEdited: "" };
 
         // store the note
         localStorage.setItem(document.getElementById('title').value, JSON.stringify(data));
@@ -88,7 +88,7 @@ Array.from(editButtons).forEach(function(button) {
                 } else {
                     let timeNow = new Date(Date.now());
                     let timeOfEdit = timeNow.toLocaleString();
-                    let newData = { "note": result, "date": originalData.date, "id": originalData.id, "timeEdited": `|  Edited on: ${timeOfEdit}` };
+                    let newData = { "note": result, "date": originalData.date, "id": originalData.id, "timeEdited": `  |  Edited on: ${timeOfEdit}` };
                     localStorage.setItem(title, JSON.stringify(newData));
                     location.reload();
                 }
