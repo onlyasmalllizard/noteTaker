@@ -15,9 +15,14 @@ function createNoteCard(key, data) {
     let card = document.createElement("div");
     card.classList.add("note-card");
 
+    let dateString = data.date;
+    if (data.timeEdited != "") {
+        dateString = dateString.concat(data.timeEdited);
+    }
+
     // creates HTML elements for the title, note, and buttons
     let title = createElement("h1", key);
-    let date = createElement("p", data.date);
+    let date = createElement("p", dateString);
     let note = createElement("p", data.note);
     let buttons = createNoteButtons(
         [{label: "Edit", classes: [data.id, "btn-primary", "edit-note"]},
