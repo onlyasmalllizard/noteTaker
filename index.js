@@ -9,7 +9,7 @@ form.addEventListener('submit', function(event) {
         let date = time.toLocaleString();
         let id = JSON.stringify(Date.now());
         let note = document.getElementById('note').value;
-        let data = { "note": note, "date": date, "id": id, timeEdited: "" };
+        let data = { "note": note, "date": `Posted on: ${date}`, "id": id, timeEdited: "" };
 
         // store the note
         localStorage.setItem(document.getElementById('title').value, JSON.stringify(data));
