@@ -1,7 +1,7 @@
 let form = document.querySelector('#noteTaker');
 
 form.addEventListener('submit', function(event) {
-    //if the title is available, store the note, otherwise warn the user
+    // if the title is available, store the note, otherwise warn the user
     if (checkTitleAvailable((document.getElementById('title').value)) === true) {
         // time is used as an id for each note, and also to create the time and date string displayed to the user
         let time = new Date(Date.now());
@@ -43,7 +43,7 @@ Object.keys(localStorage).forEach(function(key) {
     // unpacks the data object from localStorage
     let data = JSON.parse(localStorage.getItem(key));
 
-    // records the ID of the note against the title
+    // records the ID of the note against the title and data
     archivedNotes[data.id] = {key: key, data: data};
 });
 
@@ -67,10 +67,12 @@ let deleteButtons = document.getElementsByClassName('delete-note');
 Array.from(deleteButtons).forEach(function(button) {
     button.addEventListener('click', function() {
     let title = archivedNotes[button.classList[1]].key;
-        if (confirm(`Are you sure you want to remove "${title}"? You can't undo this!`)) {
+        bootbox.confirm(`Are you sure you want to remove "${title}"? You can't undo this!`, function(result) {
+            if (result !== null) {
             localStorage.removeItem(title);
             location.reload();
-        }
+            }
+        })
     })
 })
 
