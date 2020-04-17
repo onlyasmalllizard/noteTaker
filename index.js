@@ -68,7 +68,7 @@ Array.from(deleteButtons).forEach(function(button) {
     button.addEventListener('click', function() {
     let title = archivedNotes[button.classList[1]].key;
         bootbox.confirm(`Are you sure you want to remove "${title}"? You can't undo this!`, function(result) {
-            if (result !== null) {
+            if (result) {
             localStorage.removeItem(title);
             location.reload();
             }
