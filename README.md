@@ -1,6 +1,6 @@
 # noteTaker
 
-noteTaker is a web app that stores the notes you make in your browser's local storage.
+noteTaker is a web app that stores the notes you make in your browser's local storage. You can view a deployed version [here](https://onlyasmalllizard.github.io/noteTaker/).
 
 ## Feature Wish List
 
